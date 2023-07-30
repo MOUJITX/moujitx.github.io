@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>浙江水利水电学院 校园通行核验</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="public/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="public/app.css" />
+    <link type="text/css" rel="stylesheet" href="public/mobile_date.css">
+    <script type="text/javascript" src="public/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="public/mobile_date.js"></script>
+    <script src="public/jweixin-1.2.0.js"></script>
+    <script src="public/mui.min.js"></script>
+    <style>
+        .title {
+            margin: 20px 15px 10px;
+            color: #6d6d72;
+            font-size: 15px;
+        }
+
+        .oa-contact-cell.mui-table .mui-table-cell {
+            padding: 11px 0;
+            vertical-align: middle;
+        }
+
+        .oa-contact-cell {
+            position: relative;
+            margin: -11px 0;
+        }
+
+        .oa-contact-avatar {
+            width: 75px;
+        }
+
+        .oa-contact-avatar img {
+            border-radius: 50%;
+        }
+
+        .oa-contact-content {
+            width: 100%;
+        }
+
+        .oa-contact-name {
+            margin-right: 20px;
+        }
+
+        .oa-contact-name,
+        oa-contact-position {
+            float: left;
+        }
+
+        .mui-bar-tab .mui-tab-item.mui-active {
+            color: #2D6653;
+        }
+
+        .u-title {
+            color: #666;
+            font-size: 10px;
+        }
+
+        .in-title {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        k=1;
+        function disptime(){  
+        	k=k+1;
+        
+            var today=new Date();  
+            var hh=today.getHours();  
+            var mm=today.getMinutes();  
+            var ss = today.getSeconds();  
+            var year=today.getFullYear(); 
+			var month=today.getMonth()+1; 
+			var day=today.getDate(); 
+			if(month<10) month="0" + month;
+			if(day<10) day="0" + day; 
+			if(hh<10) hh="0" + hh; 
+			if(mm<10) mm="0" + mm; 
+			if(ss<10) ss="0" + ss; 
+            document.getElementById("myclock").innerHTML=hh+":"+mm+":"+ss;
+            document.getElementById("myday").innerHTML=month+"月"+day+"日";
+             
+        }   
+        //setInterval（）方法可以按照指定的周期调用函数或计算表达式  
+        var mytime = setInterval("disptime()",1000);  
+    </script>
+
+</head>
+
+<body onload="disptime()">
+    <div class="mui-content" style="margin-bottom: 110px;margin-top: 25px;">
+        <div id="tabbar-with-chat" class="mui-control-content mui-active">
+            <div class="mui-card" style="margin-top: -20px;">
+                <img src="public/logo3.png" width="100%" />
+                <ul class="mui-table-view" style="margin-top: 0px;">
+                    <li class="mui-table-view-cell" style="height: 70px;padding-top: 12px;text-align: center;">
+                        <div
+                            style="width: 33%;float: left;text-align: center;border-right: 1px #ccc solid;font-size: 16px;">
+                            <span class="u-title">姓名</span><br>
+            		小水同学
+                        </div>
+                        <div
+                            style="width: 34%;float: left;text-align: center;border-right: 1px #ccc solid;font-size: 16px;">
+                            <span class="u-title">学工号</span><br>
+            		19531016
+                        </div>
+                        <div
+                            style="width: 33%;float: left;text-align: center;border-right: 0px #ccc solid;font-size: 16px;">
+                            <span class="u-title" id="myday"></span><br>
+                            <span id="myclock"></span>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="mui-card"
+                style="margin-bottom: 10px;height: 80px;border-left: #008C95 15px solid;background-image: url(public/cardbg.jpg);">
+                <ul class="mui-table-view" style="background-image: url(public/cardbg.jpg);">
+                    <li class="mui-table-view-cell mui-media">
+                        <div class="mui-media-body">
+                            <span style="color: #008C95;">
+								<h4>身份：学生</h4>
+								
+								<h5 style="margin-top: 20px;">核验点：教学区南门</h5>
+                            </span>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="mui-card"
+                style="margin-bottom: 10px;height: 80px;border-left: green 15px solid;background-image: url(public/cardbg.jpg);">
+                <ul class="mui-table-view" style="background-image: url(public/cardbg.jpg);">
+                    <li class="mui-table-view-cell mui-media">
+                        <div class="mui-media-body">
+                            <span style="color: green;">
+								<h4>健康码：绿码</h4>
+								<h5 style="margin-top: 20px;">更新时间：2023-03-01 02:55:09</h5>
+								</span>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="mui-card"
+                style="margin-bottom: 10px;height: 130px;border-left: #008C95 15px solid;background-image: url(public/cardbg.jpg);">
+                <ul class="mui-table-view" style="background-image: url(public/cardbg.jpg);">
+                    <li class="mui-table-view-cell mui-media">
+                        <div class="mui-media-body" style="width: 60%;float: left;">
+                            <span style="color: #008C95;">
+								<h4 style="margin-bottom: 8px;">核酸：<span style="color: green;">阴性</span></h4>
+                            <h4 style="margin-bottom: 8px;">时间：<span style="color: green;">7天以上</span></h4>
+                            <h5 style="margin-bottom: 18px;"><span style="color: green;">2022-12-14 20:59:59</span></h5>
+                            <h4 style="color: green;">疫苗：<span style="color: green;">完成3次接种</span></h4>
+                            </span>
+                        </div>
+                        <div class="mui-media-body"
+                            style="width: 110px;float: right;text-align: center;font-size: 12px;margin-top: -10px;">
+                            长按 通信行程卡<img src="public/xingchengka.png" height="100px" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="mui-card" style="background-image: url(public/cardbg.jpg);">
+                <h5 style="margin: 20px 0px 20px 10px;color: #2D6653;" onclick="showlist()">
+                    核验记录(最近10条)<span style="float: right;margin-right: 10px;margin-top: -6px;" id="arrow" class="mui-icon mui-icon-arrowdown"></span>
+                </h5>
+                <ul class="mui-table-view" id="list" style="display: none;width: 98%;margin: auto;margin-bottom: 5px;">
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2023-07-30 11:19</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        生活区东门<span class="in-title" style="float: right;">2022-12-14 17:45</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        生活区东门<span class="in-title" style="float: right;">2022-12-14 17:45</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        生活区南门<span class="in-title" style="float: right;">2022-12-14 17:45</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        生活区南门<span class="in-title" style="float: right;">2022-12-14 17:45</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2022-12-10 20:33</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2022-12-10 20:33</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2022-12-10 20:32</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2022-12-10 20:32</span>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        教学区南门<span class="in-title" style="float: right;">2022-11-16 14:30</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+        <nav class="mui-bar mui-bar-tab" style="height: 100px;text-align: center;background-color: green;" id="tip">
+            <h1 style="color: #ffffff;font-size: 50px;margin-top: 15px;letter-spacing:3px" id="tip1">允许通行</h1>
+            <h5 style="color: #ffffff;margin-top: 8px;letter-spacing:1px" id="tip2">符合通行要求</h5>
+        </nav>
+    </div>
+</body>
+
+
+</html>
+<script>
+    function showlist(){
+	if(document.getElementById("list").style.display=="none"){
+		document.getElementById("list").style.display="block";
+		document.getElementById("arrow").className="mui-icon mui-icon-arrowup";
+	}else{
+		document.getElementById("list").style.display="none";
+		document.getElementById("arrow").className="mui-icon mui-icon-arrowdown";
+	}
+}
+
+</script>
+
+<script>
+</script>
